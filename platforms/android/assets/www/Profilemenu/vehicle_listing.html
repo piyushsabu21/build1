@@ -1,0 +1,182 @@
+<head>
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>	
+	<link rel="stylesheet" type="text/css" href="jvmobilemenu/jv-jquery-mobile-menu.css">
+	<meta name="MobileOptimized" content="width">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel='stylesheet' href='../css/custom-style.css'>
+	<link rel='stylesheet' href='../css/style.css'>
+	<link rel='stylesheet' href='../css/newStyle.css'>	
+	<script type="text/javascript" src="../js/website_name.js"></script>
+	<link rel="stylesheet" type="text/css" href="../notification_menu/css/style_light.css">
+    <script src="../notification_menu/js/jquery-ui-1.8.14.custom.min.js" type="text/javascript"></script>
+    <script src="../notification_menu/js/ttw-notification-menu.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="generate_notification_form/css/style.css">
+    <link rel="stylesheet" type="text/css" href="generate_notification_form/css/uniform.css">
+    <script type="text/javascript" src="generate_notification_form/js/jquery.tools.js"></script>
+    <!---<script type="text/javascript" src="generate_notification_form/js/jquery.uniform.min.js"></script>-->
+  <!--  <script type="text/javascript" src="generate_notification_form/js/main.js"></script>-->
+
+	<link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+	<script type="text/javascript">
+	 var localData = JSON.parse(localStorage.getItem('session_control'));
+				var user_id = localData.data.user_id;
+				var user_key= localData.data.user_key;
+				var user_permissions= localData.data.user_permissions;
+			$(document).ajaxStart(function()
+			 {
+			
+               $("#wait").css("display", "block");
+			   
+		     });
+			 
+             $(document).ajaxComplete(function()
+			 {
+                 $("#wait").css("display", "none");
+             });
+	
+	           $(document).ready(function(){
+			
+
+	           $.ajax
+		       ({
+                url: website + 'api/vehicles/get_vehicles/format/json',
+                type: "post",
+                dataType: 'json',
+                data: 
+				{
+                    user_id: user_id,
+                    user_key: user_key
+                    
+                }, success: function (data) {
+                    
+					 console.log("successful");
+					 var res = JSON.stringify(data);
+					  //var response = $.parseJSON(res);
+					 
+					 localStorage.setItem('veh_info', res);
+					 var veh_info = JSON.parse(localStorage.getItem('veh_info'));
+					 
+					 if(veh_info.data==null){
+					  $("#wait").css("display", "none");
+					}
+					 else{
+		var output='';
+		 for (var i=0; i<veh_info.data.length; i++){
+		output+='<table id="display_table" style="border: 1px solid black;">';
+		output+='<tr>';
+		output+='<td rowspan="4">'+(i+1)+'</td>';
+		output+='<th>Make :</th><td>'+veh_info.data[i].manufacturer_name+'</td>';
+		/*alert(veh_info.data[i].vehicle_id);*/
+		output+='<td rowspan="4" ><a href="veh_info.html?id='+i+'" style="color:#ff6d0d">More Info >></a></br><a href="#" id="deletebtn"  mydata="'+veh_info.data[i].vehicle_id+'"style="text-decoration:underline!important;">Delete</a></td>';
+		output+='</tr>';
+		output+='<tr>';
+		output+='<th>Model :</th><td>'+veh_info.data[i].model_name+'</td>';
+		output+='</tr>';
+		output+='<tr>';
+		output+='<th>Date of Purchase :</th><td>'+veh_info.data[i].date_of_purchase+'</td>';
+		output+='</tr>';
+		output+='<tr>';
+		output+='<th>Service History :</th><td>Yes</td>';
+		output+='</tr>';
+		output+='</div>';
+		output+='</table>';
+		output+='<table>';
+		output+='<tr class="blank_row"><td colspan="4"></td></tr>';
+		output+='</table>';
+		}
+		
+   
+   document.getElementById("display_box").innerHTML=output;
+   }
+  },
+error: function (response) {
+					
+                    console.log("Error arrived");
+					return false;
+                }
+
+});
+
+                        $(this).on("click","#deletebtn",function()
+						{
+							//alert("delete btn clicked");
+							var send=$(this).attr("mydata");
+							//alert("vehicle_id"+send);
+							calltocloseApi(send);
+							
+						});
+						
+			
+
+});
+
+                       function calltocloseApi(myquery)
+		               {
+			             //alert("myquery"+myquery);
+			             $.ajax({
+			
+	 			           url      : website +"/api/vehicles/delete_vehicle/format/json",
+				           type     : "POST",
+				           datatype : "json",
+			 	           data     :
+				           {
+					         user_id  : user_id,
+				             user_key : user_key,
+				             vehicle_id : myquery,
+				           },
+				           success:function(response)
+                           {
+					        alert("Deleted Successfully!");
+					        window.location="vehicle_listing.html";
+					       },
+                           error: function(err)
+                          {
+					        alert("Error in Deleting Vehicle");
+                            //alert(JSON.stringify(err));
+				          }	
+			   });
+		 }
+</script>
+	</head>
+	<header>
+	<div class="logo"><span><img src="../img/GW_logo.png" style="float:left!important;color: slategrey !important;height:37px; width:50%;position: fixed;"></span></div>
+  	<a href="About_us.html" style="float:right;padding-right:10px;padding-top:10px;"> ABOUT</a>
+	</header>
+	<script type="text/javascript" src="cordova.js"></script><body>
+	<div class="container-fluid body-content">
+	<div class="col-md-6 col-sm-6 col-xm-12 form-group">
+                            <div class="title-bar"><a onclick="javascript:history.back();"><i class="fa fa-arrow-left"></i></a>
+                            <b>MY VEHICLES</b><a href="veh_add.html"><i class="fa fa-plus-circle"></i></a>
+							</div>
+                        </div>
+	<div id="wait">
+	<img src='../img/loader.gif' width="64" height="64" /><br>Loading..</div>
+	<div id="display_box"></div>
+	</div>
+<div class="mobile-nav"  style="background: #31373d; padding:0 2%;overflow-y:hidden; width:auto;">
+   <ul class="list-unstyled">
+			<li><a href="edit_profile.html"><i class="fa fa-home"></i> EDIT PROFILE</a></li>
+			<li><a href="change_pwd.html"><i class="fa fa-envelope"></i> CHANGE PASSWORD</a></li>
+			<li><a href="#"><i class="fa fa-question-circle"></i> FAQ</a></li>
+			<li><a href="#"><i class="fa fa-dollar"></i> TESTIMONIALS</a></li>
+			<li><a href="#"><i class="fa fa-comments"></i> CONTACT US</a></li>
+		</ul>
+  </div>
+</body>
+<footer><ul class="ttw-notification-menu">
+    <li id="projects" class="notification-menu-item first-item"><a href="vehicle_listing.html">My Vehicles</a></li>
+    <li id="tasks" class="notification-menu-item"><a href="my_queries_landing.html">My Queries</a></li>
+    <li id="messages" class="notification-menu-item"><a href="#" >Chats</a></li>
+    <li id="clients" class="notification-menu-item last-item">
+        <a href="<!--index.html#-->">Notifications</a>
+		<span class="notification-bubble" title="Notifications" style="display: inline; background-color: #E81111;">0</span>
+    </li>
+
+</ul></footer>
+
+  
+  <script type="text/javascript" src="../js/TweenMax.min.js"></script>
+  <script src="jvmobilemenu/jv-jquery-mobile-menu-min.js"></script>
+  <script src="js/script-right.js"></script>

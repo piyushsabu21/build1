@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="Profilemenu/jvmobilemenu/jv-jquery-mobile-menu.css">
+	<meta name="MobileOptimized" content="width">
+	<meta name="HandheldFriendly" content="true">
+	<link rel='stylesheet' href='css/custom-style.css'>
+	<link rel='stylesheet' href='css/newStyle.css'>	
+	<link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="js/website_name.js"></script>		
+		<!---->
+       <!-- <script type="text/javascript" src="js/index.js"></script>-->		
+		<script type="text/javascript" charset="utf-8" src="js/login.js"></script>
+
+    </head>
+	<header>
+  	<a href="Profilemenu/About_us.html" style="float:right;padding-right:10px;padding-top:10px;"> ABOUT</a>
+	</header>
+<script type="text/javascript" src="cordova.js"></script>
+<body>
+
+<div id="wait" style="display:none;position:relative;top:20%;left:40%;right:40%;padding:2px; z-index:10;">
+<img src='img/loader.gif' width="64" height="64" /><br></div>
+
+<div class="container-fluid body-content">
+ <form class="reg-form" role="form" name="form" method="post"  enctype="multipart/form-data">
+		<div id="errorBox"></div>
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                               <img src="img/2.png" class="img-responsive center-block" alt="Responsive Image">
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <i class="fa fa-mobile"><input type="number" onKeyUp="TextLimit()" class="form-control" id="mobileno" placeholder="Mobile Number" required autofocus></i>
+                                                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <i class="fa fa-unlock-alt"><input type="password" id="password" class="form-control" placeholder="Password"></i>
+                                                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <button id="btn-login" class="btn btn-lg btn-primary btn-block form-control" type="button">
+                    Login</button>
+                                                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group" style="float: right!important;">
+                                <div class="input-group date">
+                                    <span class="pull-right"><a href="Profilemenu/forgot_pwd.html">Forgot Password?</a></span><span class="pull-right"> &nbsp|&nbsp </span>
+					<span class="pull-right"><a href="Profilemenu/registration.html">Register</a></span>
+                                </div>
+                                                        </div>
+                        </div>
+
+                    </form>
+					
+					<script>
+					
+					 var localData = JSON.parse(localStorage.getItem('session_control'));
+var user_id = localData.data.user_id;
+var user_key= localData.data.user_key;
+var user_permissions= localData.data.user_permissions;
+
+				if(user_id == null && user_key == null && user_permissions == null){
+				}
+				else{
+				window.location="Profilemenu/dashboard.html";
+				}
+					</script>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<head>
+ <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>	
+	<link rel="stylesheet" type="text/css" href="jvmobilemenu/jv-jquery-mobile-menu.css">
+	<meta name="MobileOptimized" content="width">
+	<meta name="HandheldFriendly" content="true">
+	
+	<link rel='stylesheet' href='../css/custom-style.css'>
+	<link rel='stylesheet' href='../css/style.css'>
+	<link rel='stylesheet' href='../css/datepicker3.css'>
+	<script type="text/javascript" src="../js/bootstrap-datepicker.js"></script>
+	<link rel='stylesheet' href='../css/newStyle.css'>	
+	<script type="text/javascript" src="../js/website_name.js"></script>
+	
+	<script type="text/javascript" src="../js/imageUpload.js"></script>
+	<script type="text/javascript" src="../js/veh_edit.js"></script>
+	<link rel="stylesheet" type="text/css" href="../notification_menu/css/style_light.css">
+    <script src="../notification_menu/js/jquery-ui-1.8.14.custom.min.js" type="text/javascript"></script>
+    <script src="../notification_menu/js/ttw-notification-menu.min.js" type="text/javascript"></script>
+    
+
+    <link rel="stylesheet" type="text/css" href="generate_notification_form/css/style.css">
+    <link rel="stylesheet" type="text/css" href="generate_notification_form/css/uniform.css">
+    <script type="text/javascript" src="generate_notification_form/js/jquery.tools.js"></script>
+    <!---<script type="text/javascript" src="generate_notification_form/js/jquery.uniform.min.js"></script>-->
+  <!--  <script type="text/javascript" src="generate_notification_form/js/main.js"></script>-->
+
+	<link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+</head>
+	<header>
+<div class="logo"><span><img src="../img/GW_logo.png" style="float:left!important;color: slategrey !important;height:37px; width:50%;position: fixed;"></span></div>
+  	<a href="About_us.html" style="float:right;padding-right:10px;padding-top:10px;"> ABOUT</a>
+	</header>
+<script type="text/javascript" src="cordova.js"></script><body>
+
+<div class="container-fluid body-content">
+
+<div class="col-md-6 col-sm-6 col-xm-12 heading">
+                            <div class="title-bar"><a onclick="javascript:history.back();"><i class="fa fa-arrow-left"></i></a>
+                            <b>VEHICLES INFORMATION</b>
+							</div>
+                        </div>
+						
+ <form class="reg-form" role="form" name="form" method="post"  enctype="multipart/form-data">
+		<div id="errorBox"></div>
+		<div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group" style="border:none!important;">
+							<div id="manufacturer_name"  class="form-control" style="border:none!important;"> </div>
+                                
+ <!-- <input type="text" id="manufacturer_name" class="form-control" name="manufacturer_name" placeholder="Make" value="">--></div>
+                        </div>
+						
+                        
+
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group" style="border:none!important;">
+							<div id="model_name"  class="form-control" style="border:none!important;"> </div>
+                                <!--<input type="text" id="model_name" class="form-control" name="model_name" placeholder="Model" value="">-->
+                                                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group" style="border:none!important;">
+							<div id="variant_name"  class="form-control" style="border:none!important;"> </div>
+                                <!--<input type="text" id="variant_name" class="form-control" name="variant_name" placeholder="Variant name" value="">-->
+                                                            </div>
+                        </div>
+
+						<div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <input type="text" id="color" class="form-control" name="color" placeholder="Color" value="">
+                                                            </div>
+                        </div>
+						
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <div class="input-group date" data-date-format="dd-mm-yyyy" data-provide="datepicker">
+                                    <input type="text" id="date_of_purchase" name="date_of_purchase" class="form-control" placeholder="Date of Purchase" value=""><span class="input-group-addon"><i class="fa fa-calendar calender"></i></span>
+                                
+								</div>
+                                                        </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <input type="text" id="registration_number" name="registration_number" class="form-control" placeholder="Registration Number" value=""> 
+                                                            </div>
+                        </div>
+                        <!--------------------------------------------------------->
+						<input type="hidden" id="user_type" name="user_type" value="0">
+						<input type="hidden" id="type" name="type" value="add"> 
+						<!--------------------------------------------------------->
+                        
+
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <input type="number" id="km_reading" class="form-control" name="km_reading" placeholder="KM Reading" value="">
+                                                            </div>
+                        </div>
+						<!--------------------------------------------------------->
+                        <input type="hidden" class="text" id="reg_status" name="action" value="">
+						<!--------------------------------------------------------->
+						<div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <div class="input-group date" data-date-format="yyyy-mm-dd" data-provide="datepicker">
+                                    <input type="text" id="last_date_of_service" name="last_date_of_service" class="form-control" placeholder="Last Date of Service" value=""><span class="input-group-addon"><i class="fa fa-calendar calender"></i></span>
+                                </div>
+                                                        </div>
+                        </div>
+						<input type="hidden" class="text" id="vehicle_id" name="action" value="">
+						<!--------------------------------------------------------->
+						<div class="col-xs-12 col-sm-12 col-md-6 col-sm-6 col-xm-12 col-lg-6">
+                            <div class="form-group">
+						<label for="files">Select multiple files: </label>
+						<input id="files" type="file" multiple/>
+						<output id="result" />
+						</div>
+                        </div>
+						
+						<div class="col-xs-12 col-sm-12 col-md-6 col-sm-6 col-xm-12 col-lg-6">
+                        <div class="form-group">
+						<input id='checkbox' type='checkbox' value='yes' name='checkbox'>
+						Would you like us to contact you for insurance renewal.
+						</div>
+						</div>
+						<!--------------------------------------------------------->
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-sm-6 col-xm-12 col-lg-6">
+                            <div class="form-group">
+                                <button class="btn btn-warning" id="save-btn">Save</button>
+								<span class="empty-space"></span>
+								<button class="btn btn-warning" onclick="javascript:history.back();" id="cancel-btn">Cancel</button>
+                            </div>
+							
+                        </div>
+						
+                    </form>
+</div>
+<div class="mobile-nav"  style="background: #31373d; padding:0 2%;overflow-y:hidden; width:auto;">
+   <ul class="list-unstyled">
+			<li><a href="edit_profile.html"><i class="fa fa-home"></i> EDIT PROFILE</a></li>
+			<li><a href="change_pwd.html"><i class="fa fa-envelope"></i> CHANGE PASSWORD</a></li>
+			<li><a href="#"><i class="fa fa-question-circle"></i> FAQ</a></li>
+			<li><a href="#"><i class="fa fa-dollar"></i> TESTIMONIALS</a></li>
+			<li><a href="#"><i class="fa fa-comments"></i> CONTACT US</a></li>
+		</ul>
+  </div>
+</body>
+<footer><ul class="ttw-notification-menu">
+    <li id="projects" class="notification-menu-item first-item"><a href="vehicle_listing.html">My Vehicles</a></li>
+    <li id="tasks" class="notification-menu-item"><a href="my_queries_landing.html">My Queries</a></li>
+    <li id="messages" class="notification-menu-item"><a href="#" >Chats</a></li>
+    <li id="clients" class="notification-menu-item last-item">
+        <a href="<!--index.html#-->">Notifications</a>
+		<span class="notification-bubble" title="Notifications" style="display: inline; background-color: #E81111;">0</span>
+    </li>
+
+</ul></footer>
+<script>
+var localData = JSON.parse(localStorage.getItem('session_control'));
+//alert(localData.data.user_id+"===="+localData.data.user_key);
+var user_id = localData.data.user_id;
+var user_key= localData.data.user_key;
+var user_permissions= localData.data.user_permissions;
+
+var veh_id = localStorage.getItem('veh_id');
+	$("#vehicle_id").val(veh_id);
+	
+	
+
+</script>
+<script>
+	  
+	function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+ var id = getUrlVars()["id"];
+ 
+	
+	var localData2 = localStorage.getItem('veh_info');
+	localStorage.setItem('veh_info', localData2);
+	var localData2 = JSON.parse(localStorage.getItem('veh_info'));
+	var res = JSON.stringify(localData2);
+ 	//alert(res);
+	
+  	
+	$("#manufacturer_name").val(localData2.data[id].make);
+	$("#color").val(localData2.data[id].color);
+	$("#date_of_purchase").val(localData2.data[id].date_of_purchase);
+	$("#model_name").val(localData2.data[id].model_name);
+	$("#variant_name").val(localData2.data[id].variant);
+	$("#registration_number").val(localData2.data[id].registration_no);
+	$("#km_reading").val(localData2.data[id].km_reading);
+	$("#last_date_of_service").val(localData2.data[id].last_dos);
+	
+	
+	if(localData2.data[id].checkbox == "yes")
+	{
+    document.getElementById("checkbox").checked = true;
+	}
+	else{
+	document.getElementById("checkbox").checked = false;
+	}
+	
+	
+	
+	  $(document).ready(function () {
+
+
+ $.ajax({
+        type: "POST",
+        url: website + 'api/vehicles/getVehicleMakers/format/json',
+        data: 	{	
+				'user_key':user_key,
+				'user_id':user_id,
+				'search':''
+				},
+        
+        success: function(data){
+		  var res = JSON.stringify(data);
+		  //alert(res);
+		  var response = $.parseJSON(res);
+		  var output='<select class="form-control" onchange="run();return false" id="manufacturer_name">'
+   output+='<option value="">Select Make</option>'
+   for (var i=0; i<response.data.length; i++){
+    output+='<option value="'+response.data[i].name+'">'
+    output+=response.data[i].name+'</option>'
+   }
+   output+='</select>'
+   document.getElementById("manufacturer_name").innerHTML=output;
+  
+		
+		$("#manufacturer_name option").each(function() {
+		if($(this).text() == localData2.data[id].manufacturer_name) {
+		  $(this).attr('selected', 'selected');            
+		  }                        
+		});
+		run();
+        },
+		error: function (response) {
+					
+                    alert("Make loading failed!");
+					return false;
+                }		
+      });
+});
+
+function run() {
+
+	var manufacturer_name = document.form.manufacturer_name.value;
+
+$.ajax
+({
+ type: "POST",
+        url: website + 'api/vehicles/getVehicleModels/format/json',
+        data: 	{	
+				'user_key':user_key,
+				'user_id':user_id,
+				'search':'',
+				'maker':manufacturer_name
+				},
+        
+        success: function(data){
+		  var res = JSON.stringify(data);
+		  var response = $.parseJSON(res);
+		  
+   var output='<select class="form-control" onchange="run1();return false" id="model_name">'
+   output+='<option value="">Select Model Name</option>'
+   for (var i=0; i<response.data.length; i++){
+    output+='<option value="'+response.data[i].name+'">'
+    output+=response.data[i].name+'</option>'
+   }
+   output+='</select>'
+   document.getElementById("model_name").innerHTML=output
+			
+			$("#model_name option").each(function() {
+		if($(this).text() == localData2.data[id].model_name) {
+		  $(this).attr('selected', 'selected');            
+		  }                        
+		});
+		run1();
+        },
+		error: function (response) {
+					
+                    alert("Model name loading failed!");
+					return false;
+                }		
+      });
+}
+function run1() {
+
+	var model_name = document.form.model_name.value;
+
+	   $.ajax({
+        type: "POST",
+        url: website + 'api/vehicles/getVehicleVariant/format/json',
+        data: 	{	
+				'user_key':user_key,
+				'user_id':user_id,
+				'model':model_name,
+				'search':''				
+				},
+        
+        success: function(data){
+		  var res = JSON.stringify(data);
+		  var response = $.parseJSON(res);
+		  
+   var output='<select class="form-control" id="variant_name">'
+   output+='<option value="">Select Variant</option>'
+   for (var i=0; i<response.data.length; i++){
+    output+='<option value="'+response.data[i].name+'">'
+    output+=response.data[i].name+'</option>'
+   }
+   output+='</select>'
+   document.getElementById("variant_name").innerHTML=output
+			alert(localData2.data[id].variant);
+			$("#variant_name option").each(function() {
+		if($(this).text() == localData2.data[id].variant) {
+		  $(this).attr('selected', 'selected');            
+		  }                        
+		});
+        },
+		error: function (response) {
+					
+                    alert("Variant name loading failed!");
+					return false;
+                }		
+      });
+	  }
+
+</script>
+  <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="../js/TweenMax.min.js"></script>
+  <script src="jvmobilemenu/jv-jquery-mobile-menu-min.js"></script>
+  <script src="js/script-right.js"></script>

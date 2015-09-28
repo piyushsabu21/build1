@@ -1,0 +1,37 @@
+html,body{width:100%;margin:0;padding:0}.mobile-nav ul{margin:auto;padding:0}.mobile-nav ul li{list-style:none}.hamburger{position:fixed;bottom:0;float:right;margin:10px;cursor:pointer;z-index:999;display:block}.hamburger .hamburger-inner{position:relative;height:21px;width:30px;display:block;margin:0;padding:0}.hamburger .bar{width:30px;height:2px;background:#000;position:absolute;top:0}.hamburger .bar.bar2,.hamburger .bar.bar3{top:9px}.hamburger .bar.bar4{top:18px}.hamburger.open .bar1,.hamburger.open .bar4{display:none}.hamburger.open .bar2,.hamburger.open .bar3{height:3px}
+
+.mobile-nav{
+	padding: 0px 2%;
+    overflow-y: hidden!important;
+    width:!important;
+    height: 91.25%;
+    top: 50px!important;
+}
+
+.footer {
+    bottom: 0;
+}
+.header, .footer {
+    box-sizing: border-box;
+    width: 100%;
+    position: fixed;
+}
+.mm-slideout {
+    -webkit-transition: -webkit-transform 0.4s ease;
+    -ms-transition: -ms-transform 0.4s ease;
+    transition: transform 0.4s ease;
+}
+.header, .footer {
+    background: #f0f0f0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 40px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 8%;
+}
+.header, .content, .footer {
+    text-align: center;
+}

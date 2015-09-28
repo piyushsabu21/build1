@@ -1,0 +1,128 @@
+<html>	
+	<head>
+        <meta charset="UTF-8">
+            <title>Garage Works</title>
+             
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/datepicker3.css" />
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/website_name.js"></script>
+	<script type="text/javascript" src="js/register.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	
+	<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+	
+	
+	
+	<!--
+    <script type="text/javascript" src="js/index.js"></script>-->
+	</head>
+	<div class="header">
+    <div class="logo"><a href="#"> <img src="img/1.png"></a></div>
+	</div>
+	
+	<script type="text/javascript" src="cordova.js"></script><body>
+	
+		<form class="reg-form" role="form" name="form" method="post"  enctype="multipart/form-data">
+		<div id="errorBox"></div>
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <input type="text" id="firstname" class="form-control" name="firstname" placeholder="First Name" value="">
+                                                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <input type="text" id="lastname" class="form-control" name="lastname" placeholder="Last Name" value="">
+                                                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <input type="number" id="mobile_no" onKeyUp=TextLimit() class="form-control" name="mobile_no" placeholder="Mobile Number" value="">
+                                                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <input type="text" id="other_contact" class="form-control" name="other_contact" placeholder="Other Contact" value="">
+                                                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <input type="password" id="password" class="form-control" name="password" placeholder="Password">
+                                                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <input type="password" id="confirm_password" class="form-control" name="confirm_password" placeholder="Confirm Password">
+                                                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <div class="input-group date">
+                                    <input type="text" id="dob" name="dob" class="form-control" placeholder="Birth Date" value=""><span class="input-group-addon"><i class="fa fa-calendar calender"></i></span>
+                                </div>
+                                                        </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <input type="text" id="emailid" name="emailid" class="form-control" placeholder="Email id" value=""> 
+                                                            </div>
+                        </div>
+                        <input type="hidden" id="user_type" name="user_type" value="0"> 
+
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <select class="form-control" name="state" value="">
+                                    <option value="">select state</option>
+                                                                            <option value="6">Dehradun</option>
+                                                                            <option value="3">Delhi</option>
+                                                                            <option value="5">Gujarat</option>
+                                                                            <option value="4">Lucknow</option>
+                                                                            <option value="2">Maharashtra</option>
+                                                                    </select>
+                                                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <!--<input type="text" class="form-control" placeholder="Cities" id="city" name="city" value="">-->
+                                <select class="form-control" name="city">
+                                    <option value="">select city</option>
+                                                                            <option value="4">chandani chauk</option>
+                                                                            <option value="1">colaba</option>
+                                                                            <option value="3">kandivali</option>
+                                                                            <option value="2">nizzamuddin</option>
+                                                                    </select>
+                                                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <input type="text" id="locality" class="form-control" name="locality" placeholder="Locality" value="">
+                                                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xm-12">
+                            <div class="form-group">
+                                <input type="text" id="pincode" class="form-control" name="pincode" placeholder="Pincode" value="">
+                                                            </div>
+                        </div>
+                        <input type="hidden" class="text" id="reg_status" name="action" value="">
+
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-sm-6 col-xm-12 col-lg-6">
+                            <div class="form-group">
+                                <button class="btn btn-warning" id="register-btn">Register</button>
+                            </div>
+                        </div>
+                    </form>
+					
+	</body>
+</html>
